@@ -3,7 +3,15 @@
 <div id="products">
   <% @products.each do |product| %>
     <div>
-      <%= product.name %>
+      <a href="/products/<%= product.id %>">
+        <%= product.name %>
+        <%= product.created_at %>
+      </a>
     </div>
   <% end %>
 </div>
+
+<h2>Create a new product</h2>
+<%= link_to "New Product", new_product_path%>
+
+
